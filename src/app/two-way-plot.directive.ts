@@ -13,17 +13,41 @@ import * as d3 from 'd3';
   selector: '[libTwoWayPlot]',
 })
 export class TwoWayPlotDirective implements OnChanges {
-  @Input() data;
+  /**
+   *@description each elment is an object that represents a dot.
+   */
+  @Input() data: Object[];
+  /**
+   *@description FIND OUT WHAT THIS DOES
+   */
   @Input() correction;
+  /**
+   *@description FIND OUT WHAT THIS DOES
+   */
   @Input() upType;
+  /**
+   *@description FIND OUT WHAT THIS DOES
+   */
   @Input() sigThr;
+  /**
+   *@description FIND OUT WHAT THIS DOES
+   */
   @Input() selectedItem;
+  /**
+   *@description FIND OUT WHAT THIS DOES
+   */
   @Input() disableSelection;
   @Input() axisXLabel;
   @Input() axisYLabel;
-  @Input() numTicks;
+  /**
+   *@description this is the label for the s axis
+   */
+  @Input() numTicks: number;
   @Input() sigLabel;
   @Input() itemLabel;
+  /**
+   *@description The property
+   */
   @Input() itemSize;
   @Input() itemId;
   @Input() item;
@@ -42,7 +66,9 @@ export class TwoWayPlotDirective implements OnChanges {
   private x;
   private y;
   private color;
-  private pSize;
+  private pSize:
+    | d3.ScaleLogarithmic<number, number, never>
+    | d3.ScaleLinear<number, number, never>;
   private xAxis;
   private yAxis;
   private twoWayPlotVersion = 'TWP v2.0';
@@ -99,6 +125,7 @@ export class TwoWayPlotDirective implements OnChanges {
 
     if (this.itemScale === 'log') {
       this.pSize = d3.scaleLog().base(2).range([3.5, 14]);
+      console.log(this.pSize);
     } else {
       this.pSize = d3.scaleLinear().range([3.5, 14]);
     }

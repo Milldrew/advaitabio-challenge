@@ -1,15 +1,15 @@
 <div
+  id="twoWayPlot"
   class="plot"
   [data]="data"
   libTwoWayPlot
   correction=""
   l
-  upType="UP TYPE RIGHT HERE SEE ME"
-  sigThr=".05"
+  sigThr="thr"
   disableSelection="false"
   axisXLabel="pORA"
   axisYLabel="pAcc"
-  numTicks="35"
+  [numTicks]="35"
   sigLabel="pComb"
   itemLabel="pName"
   itemSize="path_size"
