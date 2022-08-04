@@ -11,10 +11,10 @@ export class D3GlobalConstants {
   ];
 }
 
-export function log10(val) {
+export function log10(val: number) {
   return Math.log(val) / Math.LN10;
 }
-
+/*
 export function colorlegend(target, scale, type, options) {
   var scaleTypes = ['linear', 'quantile', 'ordinal'],
     found = false,
@@ -322,3 +322,4 @@ export function wrapText(
     }
   }
 }
+*/
