@@ -66,6 +66,9 @@ export class TwoWayPlotDirective implements OnChanges {
   private x;
   private y;
   private color;
+  /**
+   * @description property  itemScale determines if pSize uses linear or log to determine axes
+   */
   private pSize:
     | d3.ScaleLogarithmic<number, number, never>
     | d3.ScaleLinear<number, number, never>;
@@ -337,7 +340,7 @@ export class TwoWayPlotDirective implements OnChanges {
       .nice();
     this.pSize.domain(
       d3.extent(data, (d) => {
-        return d[this.itemSize];
+        return +d[this.itemSize];
       })
     );
 
