@@ -4,15 +4,15 @@ import {
   EventEmitter,
   HostListener,
   Input,
+  OnChanges,
   Output,
 } from '@angular/core';
-import { log10 } from '../common-function';
+import { log10 } from './common-function';
 import * as d3 from 'd3';
-
 @Directive({
   selector: '[libTwoWayPlot]',
 })
-export class TwoWayPlotDirective {
+export class TwoWayPlotDirective implements OnChanges {
   @Input() data;
   @Input() correction;
   @Input() upType;
@@ -50,7 +50,6 @@ export class TwoWayPlotDirective {
   constructor(private ele: ElementRef) {
     this.margin = { top: 20, right: 20, bottom: 75, left: 70 };
   }
-
   init() {
     this.axisOffset = 20;
 
