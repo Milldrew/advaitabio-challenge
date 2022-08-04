@@ -1,12 +1,12 @@
-import { D3PlotModule } from "d3-plot";
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { TwoWayPlotDirective } from './two-way-plot.directive';
 
-import { AppComponent } from "./app.component";
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, D3PlotModule],
+  declarations: [AppComponent, TwoWayPlotDirective],
+  imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
 })
