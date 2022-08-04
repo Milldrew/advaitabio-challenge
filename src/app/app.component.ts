@@ -8,12 +8,12 @@ import * as data from './data.json';
 })
 export class AppComponent {
   title = 'd3-lib-workspace';
-  data = 'data from component';
+  data;
   mockData = {
     xLabel: 'xlabel',
     yLabel: 'ylabel',
   };
   constructor() {
-    console.log('hello from app root');
+    this.data = Array.from(data);
   }
 }

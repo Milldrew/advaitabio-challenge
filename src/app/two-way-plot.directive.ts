@@ -50,11 +50,6 @@ export class TwoWayPlotDirective implements OnChanges {
   constructor(private ele: ElementRef) {
     this.margin = { top: 20, right: 20, bottom: 75, left: 70 };
   }
-  /*
-  ngOnChanges() {
-    alert(this.data);
-  }
-  */
   init() {
     this.axisOffset = 20;
 
