@@ -12,6 +12,9 @@ describe('TwoWayPlotDirective', () => {
   it('The twoWayPlot hasbeen instantiated', () => {
     //const directive = new TwoWayPlotDirective();
 
-    expect('hello').toBeTruthy();
+    const svgElement = fixture.nativeElement.querySelector('svg');
+    const section = fixture.nativeElement.querySelector('section');
+    expect(svgElement).toBeTruthy();
+    expect(section).toBeFalsy();
   });
 });
