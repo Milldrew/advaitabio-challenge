@@ -447,7 +447,7 @@ export class TwoWayPlotDirective implements OnChanges {
           .attr('r', self.pSize(circle_data[self.itemSize]));
       })
       .on('click', (event, d) => {
-        if (!this.disableSelection) {
+        if (this.disableSelection) {
           this.nextStateFn.emit(d[this.itemId]);
         }
       });
