@@ -77,6 +77,7 @@ export class TwoWayPlotDirective implements OnChanges {
   private twoWayPlotVersion = 'TWP v2.0';
 
   constructor(private ele: ElementRef) {
+    console.log(this.ele);
     this.margin = { top: 20, right: 20, bottom: 75, left: 70 };
   }
   init() {

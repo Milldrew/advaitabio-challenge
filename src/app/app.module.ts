@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { TwoWayPlotDirective } from './two-way-plot.directive';
-
 import { AppComponent } from './app.component';
+import { TwoWayPlotDirective } from './two-way-plot.directive';
 
 @NgModule({
   declarations: [AppComponent, TwoWayPlotDirective],

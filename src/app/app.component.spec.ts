@@ -26,4 +26,10 @@ describe('Testing D3 twoWayPlot', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('#twoWayPlot')?.textContent).toBeFalsy();
   });
+  it('Make sure the twoWayPlot can be instantiated', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('div')).toBeTruthy();
+  });
 });
