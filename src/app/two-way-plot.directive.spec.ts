@@ -11,7 +11,7 @@ describe('TwoWayPlotDirective', () => {
   });
   it('The twoWayPlot hasbeen instantiated', () => {
     //const directive = new TwoWayPlotDirective();
-    console.log(fixture);
+
     expect('hello').toBeTruthy();
   });
 });
