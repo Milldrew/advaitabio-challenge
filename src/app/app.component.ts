@@ -14,5 +14,6 @@ export class AppComponent {
   clickDotValue = null;
   handleDotClick(event) {
     this.clickDotValue = event;
+    console.log(this.clickDotValue, 'click dot event value');
   }
 }
