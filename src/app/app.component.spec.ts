@@ -1,33 +1,32 @@
 import { TestBed } from '@angular/core/testing';
+import { TwoWayPlotDirective } from 'd3-plot';
 import { AppComponent } from './app.component';
 
 describe('Testing D3 twoWayPlot', () => {
+  let fixture;
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [AppComponent, TwoWayPlotDirective],
     }).compileComponents();
+    fixture = TestBed.createComponent(AppComponent);
   });
+  afterEach(() => (fixture = null));
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
   it(`The data should be initialized`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
     const app = fixture.componentInstance;
     expect(app.data).toBeTruthy();
   });
 
-  it('The data should be assigned to the ', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('#twoWayPlot')?.textContent).toBeFalsy();
-  });
   it('Make sure the twoWayPlot can be instantiated', () => {
-    const fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('div')).toBeTruthy();

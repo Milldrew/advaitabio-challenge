@@ -77,7 +77,6 @@ export class TwoWayPlotDirective implements OnChanges {
   private twoWayPlotVersion = 'TWP v2.0';
 
   constructor(private ele: ElementRef) {
-    console.log(this.ele);
     this.margin = { top: 20, right: 20, bottom: 75, left: 70 };
   }
   init() {
@@ -129,7 +128,6 @@ export class TwoWayPlotDirective implements OnChanges {
 
     if (this.itemScale === 'log') {
       this.pSize = d3.scaleLog().base(2).range([3.5, 14]);
-      console.log(this.pSize);
     } else {
       this.pSize = d3.scaleLinear().range([3.5, 14]);
     }
