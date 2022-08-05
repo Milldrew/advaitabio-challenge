@@ -28,5 +28,8 @@ describe('our first Protractor test', () => {
     await browser.actions().mouseMove(dot).perform();
     rValue = await dot.getAttribute('r');
     console.log(rValue);
+    await browser.actions().mouseMove({ x: 1000, y: 1000 }).perform();
+    rValue = await dot.getAttribute('r');
+    console.log(rValue);
   });
 });
