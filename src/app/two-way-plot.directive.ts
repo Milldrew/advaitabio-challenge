@@ -448,7 +448,7 @@ export class TwoWayPlotDirective implements OnChanges {
       })
       .on('click', (event, d) => {
         if (!this.disableSelection) {
-          this.nextStateFn.emit(d);
+          this.nextStateFn.emit(d[this.itemId]);
         }
       });
 

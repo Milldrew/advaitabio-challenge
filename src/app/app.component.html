@@ -6,7 +6,7 @@
   correction=""
   l
   sigThr="thr"
-  disableSelection="false"
+  [disableSelection]="false"
   axisXLabel="pORA"
   axisYLabel="pAcc"
   [numTicks]="35"
@@ -16,4 +16,5 @@
   itemId="pathID"
   item="pathway"
   itemScale="log"
+  (nextStateFn)="handleDotClick($event)"
 ></div>
