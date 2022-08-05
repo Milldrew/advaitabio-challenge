@@ -7,12 +7,7 @@ import * as data from './data.json';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'd3-lib-workspace';
   data;
-  mockData = {
-    xLabel: 'xlabel',
-    yLabel: 'ylabel',
-  };
   constructor() {
     this.data = Array.from(data);
   }

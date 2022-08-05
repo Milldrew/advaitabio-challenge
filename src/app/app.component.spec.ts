@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-describe('AppComponent', () => {
+describe('Testing D3 twoWayPlot', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AppComponent],
@@ -14,18 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'd3-lib-workspace'`, () => {
+  it(`The data should be initialized`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual(undefined);
+    expect(app.data).toBeTruthy();
   });
 
-  it('should render title', () => {
+  it('The data should be assigned to the ', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'd3-lib-workspace app is running!'
-    );
+    expect(compiled.querySelector('#twoWayPlot')?.textContent).toBeFalsy();
   });
 });
