@@ -17,14 +17,29 @@ describe('TwoWayPlotDirective', () => {
     expect(svgElement).toBeTruthy();
     expect(section).toBeFalsy();
   });
-  it('If disableSelection is true the click emits the itemId, if false it does not emit the itemId', () => {
+  it('If disableSelection is true clicking a spot emits the itemId', () => {
     const twoWayPlot = fixture.nativeElement.querySelector('#twoWayPlot');
-    const dot = fixture.nativeElement.querySelector('#pathway11202');
-    console.log(fixture.componentInstance.clickDotValue, 'clickDotValue');
-    console.log(dot, 'DOT');
-    dot.dispatchEvent(new Event('click'));
-    const disableSelection = twoWayPlot.getAttribute(
+    let disableSelection = twoWayPlot.getAttribute(
       'ng-reflect-disable-selection'
     );
+    expect(fixture.componentInstance.clickDotValue).toBeNull();
+    const dot = fixture.nativeElement.querySelector('#pathway11202');
+    console.log(dot, 'DOT');
+    dot.dispatchEvent(new Event('click'));
+    disableSelection = twoWayPlot.getAttribute('ng-reflect-disable-selection');
+    expect(fixture.componentInstance.clickDotValue).toBe('11202');
+  });
+  it("If disableSelection is false the click doesn't emit the itemId", () => {
+    const twoWayPlot = fixture.nativeElement.querySelector('#twoWayPlot');
+    let disableSelection = twoWayPlot.setAttribute(
+      'ng-reflect-disable-selection',
+      false
+    );
+    expect(fixture.componentInstance.clickDotValue).toBeNull();
+    const dot = fixture.nativeElement.querySelector('#pathway11202');
+    console.log(dot, 'DOT');
+    dot.dispatchEvent(new Event('click'));
+    disableSelection = twoWayPlot.getAttribute('ng-reflect-disable-selection');
+    expect(fixture.componentInstance.clickDotValue).toBe('11202');
   });
 });
