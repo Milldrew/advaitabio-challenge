@@ -4,9 +4,7 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
@@ -19,13 +17,15 @@ describe('AppComponent', () => {
   it(`should have as title 'd3-lib-workspace'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('d3-lib-workspace');
+    expect(app.title).toEqual(undefined);
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('d3-lib-workspace app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain(
+      'd3-lib-workspace app is running!'
+    );
   });
 });
