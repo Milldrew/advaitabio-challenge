@@ -21,7 +21,12 @@ describe('our first Protractor test', () => {
   });
   */
   it('The dot id=pathway11202 sarts at 14, goes to 19 on mouseover and goes back to 14 on mouseout', async () => {
-    const dot = await element(by.id('pathway11202'));
-    console.log(dot);
+    const dot = element(by.id('pathway11202'));
+    let rValue = await dot.getAttribute('r');
+    console.log(typeof rValue);
+    console.log(rValue);
+    await browser.actions().mouseMove(dot).perform();
+    rValue = await dot.getAttribute('r');
+    console.log(rValue);
   });
 });
