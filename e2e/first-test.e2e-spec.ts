@@ -6,6 +6,7 @@ describe('our first Protractor test', () => {
     await browser.get('');
     await browser.waitForAngular();
   });
+  /*
   it('App is runningn on localhost:4200', async () => {
     expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/');
     const title = await browser.getTitle();
@@ -13,8 +14,14 @@ describe('our first Protractor test', () => {
   it('The plot graph instantiates', async () => {
     //const h1Ele = await element(by.name('h1')).getText();
     //console.log(h1Ele);
-    const dotElement = element(by.id('pathway11202'));
-    const rValue = await dotElement.getAttribute('r');
-    console.log(rValue);
+    const svgElement = element(by.tagName('svg'));
+    const svgIsPresent = await svgElement.isPresent();
+    console.log(svgIsPresent);
+    expect(svgIsPresent).toBe(true);
+  });
+  */
+  it('The dot id=pathway11202 sarts at 14, goes to 19 on mouseover and goes back to 14 on mouseout', async () => {
+    const dot = await element(by.id('pathway11202'));
+    console.log(dot);
   });
 });
