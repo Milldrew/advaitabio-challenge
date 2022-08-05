@@ -24,11 +24,4 @@ describe('Testing D3 twoWayPlot', () => {
     const app = fixture.componentInstance;
     expect(app.data).toBeTruthy();
   });
-
-  it('Make sure the twoWayPlot can be instantiated', () => {
-    fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('div')).toBeTruthy();
-  });
 });

@@ -11,8 +11,8 @@ export class AppComponent {
   constructor() {
     this.data = Array.from(data);
   }
+  clickDotValue = null;
   handleDotClick(event) {
-    console.log(event);
-    return event;
+    this.clickDotValue = event;
   }
 }
