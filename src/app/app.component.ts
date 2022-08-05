@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import * as data from './data.json';
 
 @Component({
@@ -11,6 +11,7 @@ export class AppComponent {
   constructor() {
     this.data = Array.from(data);
   }
+
   clickDotValue = null;
   handleDotClick(event) {
     this.clickDotValue = event;

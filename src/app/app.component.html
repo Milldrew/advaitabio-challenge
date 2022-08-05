@@ -19,3 +19,23 @@
   itemScale="log"
   (nextStateFn)="handleDotClick($event)"
 ></div>
+<div
+  id="twoWayPlotDisableSelectionFalse"
+  class="plot"
+  [data]="data"
+  libTwoWayPlot
+  correction=""
+  l
+  sigThr="thr"
+  [disableSelection]="false"
+  axisXLabel="pORA"
+  axisYLabel="pAcc"
+  [numTicks]="35"
+  sigLabel="pComb"
+  itemLabel="pName"
+  itemSize="path_size"
+  itemId="pathID"
+  item="pathway"
+  itemScale="log"
+  (nextStateFn)="handleDotClick($event)"
+></div>

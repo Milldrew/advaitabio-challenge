@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { TwoWayPlotDirective } from './two-way-plot.directive';
 describe('TwoWayPlotDirective', () => {
-  let fixture: ComponentFixture<any>;
+  let fixture: ComponentFixture<AppComponent>;
   let dotElement = null;
   beforeEach(async () => {
     fixture = TestBed.configureTestingModule({
@@ -30,16 +30,12 @@ describe('TwoWayPlotDirective', () => {
     expect(fixture.componentInstance.clickDotValue).toBe('11202');
   });
   it("If disableSelection is false the click doesn't emit the itemId", () => {
-    const twoWayPlot = fixture.nativeElement.querySelector('#twoWayPlot');
-    let disableSelection = twoWayPlot.setAttribute(
-      'ng-reflect-disable-selection',
-      false
+    const AppComponent = fixture.componentInstance;
+    expect(AppComponent.clickDotValue).toBeNull();
+    const dot = fixture.nativeElement.querySelector(
+      '#twoWayPlotDisableSelectionFalse #pathway11202'
     );
-    expect(fixture.componentInstance.clickDotValue).toBeNull();
-    const dot = fixture.nativeElement.querySelector('#pathway11202');
-    console.log(dot, 'DOT');
     dot.dispatchEvent(new Event('click'));
-    disableSelection = twoWayPlot.getAttribute('ng-reflect-disable-selection');
-    expect(fixture.componentInstance.clickDotValue).toBe('11202');
+    expect(AppComponent.clickDotValue).toBeNull();
   });
 });
