@@ -1,16 +1,24 @@
 import { TestBed } from '@angular/core/testing';
-import { TwoWayPlotDirective } from 'd3-plot';
+import { TwoWayPlotDirective } from './two-way-plot.directive';
 import { AppComponent } from './app.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('TestDotDirective', () => {
   let fixture;
-  beforeEach(async () => {
+  let dotElement;
+  beforeAll(async () => {
     fixture = TestBed.configureTestingModule({
       declarations: [AppComponent, TwoWayPlotDirective],
     }).createComponent(AppComponent);
     fixture.detectChanges();
-    console.log('BEFORE EACH fixture: ', Array.isArray(fixture));
+    dotElement = fixture.nativeElement.querySelector('#pathway11202');
   });
-  afterEach(() => (fixture = null));
-  it('should create an instance', () => {});
+  afterAll(() => (fixture = null));
+  it('should create an instance', () => {
+    dotElement.addEventListener('mouseover', (event) => {
+      console.log('MOUSE OVER EVENT', event.target);
+    });
+    console.log(dotElement);
+    dotElement.dispatchEvent(new Event('mouseover'));
+  });
 });
