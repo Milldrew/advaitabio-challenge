@@ -23,13 +23,14 @@ describe('our first Protractor test', () => {
   it('The dot id=pathway11202 sarts at 14, goes to 19 on mouseover and goes back to 14 on mouseout', async () => {
     const dot = element(by.id('pathway11202'));
     let rValue = await dot.getAttribute('r');
-    console.log(typeof rValue);
-    console.log(rValue);
+    expect(rValue).toBe('14');
     await browser.actions().mouseMove(dot).perform();
     rValue = await dot.getAttribute('r');
     console.log(rValue);
+    expect(rValue).toBe('19');
     await browser.actions().mouseMove({ x: 1000, y: 1000 }).perform();
     rValue = await dot.getAttribute('r');
+    expect(rValue).toBe('14');
     console.log(rValue);
   });
 });
