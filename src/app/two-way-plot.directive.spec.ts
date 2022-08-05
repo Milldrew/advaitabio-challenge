@@ -3,11 +3,13 @@ import { AppComponent } from './app.component';
 import { TwoWayPlotDirective } from './two-way-plot.directive';
 describe('TwoWayPlotDirective', () => {
   let fixture: ComponentFixture<any>;
+  let dotElement = null;
   beforeEach(async () => {
     fixture = TestBed.configureTestingModule({
       declarations: [AppComponent, TwoWayPlotDirective],
     }).createComponent(AppComponent);
     fixture.detectChanges();
+    console.log('BEFORE EACH fixture: ', Array.isArray(fixture));
   });
   afterEach(() => (fixture = null));
   it('The twoWayPlot hasbeen instantiated', () => {
@@ -35,13 +37,12 @@ describe('TwoWayPlotDirective', () => {
     console.log(r, 'FROM DOT11202');
     console.log(typeof r, 'FROM DOT11202 TYPEOF');
     expect(r).toBe('14');
-
-    console.log(dot11202.dispatchEvent, 'dispatch functio');
-    const status = dot11202.dispatchEvent(new Event('mouseenter'));
-    console.log('EVENT STATUS:', status);
-    dot11202 = fixture.nativeElement.querySelector('#pathway11202');
-
-    r = dot11202.attributes.getNamedItem('r').value;
+    console.log(dot11202.dispatchEvent, 'dispatch function');
+    dot11202.addEventListener('mouseover', () => {
+      console.log(dot11202);
+      console.log(r);
+    });
+    dot11202.dispatchEvent(new Event('mouseover'));
     console.log(r, 'AFTER EVENT');
   });
 });
