@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { D3PlotComponent } from './d3-plot.component';
 import { TwoWayPlotDirective } from './two-way-plot.directive';
 
 @NgModule({
-  declarations: [D3PlotComponent, TwoWayPlotDirective],
+  declarations: [TwoWayPlotDirective],
   imports: [],
-  exports: [D3PlotComponent, TwoWayPlotDirective],
+  exports: [TwoWayPlotDirective],
 })
 export class D3PlotModule {}
