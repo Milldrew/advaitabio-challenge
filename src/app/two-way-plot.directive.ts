@@ -73,8 +73,17 @@ export class TwoWayPlotDirective implements OnChanges {
    *@description This function will triggered when clicking a spot if the disableSelection is true and it will emit the itemId of the spot that is clicked
    */
   @Output() nextStateFn = new EventEmitter<{}>();
+  /**
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
+   */
   @Input() itemScale;
+  /**
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
+   */
   @Input() showXThreshold;
+  /**
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
+   */
   @Input() showYThreshold;
   private margin;
   private axisOffset;
