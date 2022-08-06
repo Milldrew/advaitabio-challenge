@@ -18,42 +18,72 @@ export class TwoWayPlotDirective implements OnChanges {
    */
   @Input() data: Object[];
   /**
-   *@description FIND OUT WHAT THIS DOES
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
    */
   @Input() correction;
   /**
-   *@description FIND OUT WHAT THIS DOES
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
    */
   @Input() upType;
   /**
-   *@description FIND OUT WHAT THIS DOES
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
    */
   @Input() sigThr;
   /**
-   *@description FIND OUT WHAT THIS DOES
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
    */
   @Input() selectedItem;
   /**
-   *@description FIND OUT WHAT THIS DOES
+   *@description When true the spots will emit their itemID, via nextStateFn Output when false it will not emit.
    */
   @Input() disableSelection;
+  /**
+   *@description The value will be used to label the x axis on the two way plot.
+   */
   @Input() axisXLabel;
+  /**
+   *@description  The value will be used to label the y axis on the two way plot.
+   */
   @Input() axisYLabel;
   /**
-   *@description this is the label for the s axis
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
    */
   @Input() numTicks: number;
+  /**
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
+   */
   @Input() sigLabel;
+  /**
+   *@description This value matches the key on the data that deterimnes the spots name.
+   */
   @Input() itemLabel;
   /**
-   *@description The property
+   *@description This value will match the key on the data that determines the spots size from the data.
    */
-  @Input() itemSize;
+  @Input() itemSize: string;
+  /**
+   *@description This value matches the key used to create the spotsId `${item}${itemId}`
+   */
   @Input() itemId;
+  /**
+   *@description This value matches the key used to create the spotsId `${item}${itemId}`
+   */
   @Input() item;
+  /**
+   *@description This function will triggered when clicking a spot if the disableSelection is true and it will emit the itemId of the spot that is clicked
+   */
   @Output() nextStateFn = new EventEmitter<{}>();
+  /**
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
+   */
   @Input() itemScale;
+  /**
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
+   */
   @Input() showXThreshold;
+  /**
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
+   */
   @Input() showYThreshold;
   private margin;
   private axisOffset;
@@ -128,7 +158,6 @@ export class TwoWayPlotDirective implements OnChanges {
 
     if (this.itemScale === 'log') {
       this.pSize = d3.scaleLog().base(2).range([3.5, 14]);
-      console.log(this.pSize);
     } else {
       this.pSize = d3.scaleLinear().range([3.5, 14]);
     }
@@ -447,8 +476,8 @@ export class TwoWayPlotDirective implements OnChanges {
           .attr('r', self.pSize(circle_data[self.itemSize]));
       })
       .on('click', (event, d) => {
-        if (!this.disableSelection) {
-          this.nextStateFn.emit(d);
+        if (this.disableSelection) {
+          this.nextStateFn.emit(d[this.itemId]);
         }
       });
 
