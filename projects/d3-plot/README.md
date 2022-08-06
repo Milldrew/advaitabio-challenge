@@ -9,7 +9,7 @@ add to app.module.ts imports array
 </p>
 
 ```
-import { D3PlotModule } = from "d3-plot";
+import { D3PlotModule } from "d3-plot";
 ```
 
 
