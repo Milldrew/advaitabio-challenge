@@ -12,7 +12,6 @@ describe('Testing D3 twoWayPlot', () => {
   });
   afterEach(() => (fixture = null));
 
-  /*
   it('should create the app', () => {
     fixture.detectChanges();
     const app = fixture.componentInstance;
@@ -25,5 +24,4 @@ describe('Testing D3 twoWayPlot', () => {
     const app = fixture.componentInstance;
     expect(app.data).toBeTruthy();
   });
-  */
 });

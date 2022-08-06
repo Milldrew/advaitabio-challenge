@@ -60,7 +60,7 @@ export class TwoWayPlotDirective implements OnChanges {
   /**
    *@description This value will match the key on the data that determines the spots size from the data.
    */
-  @Input() itemSize;
+  @Input() itemSize: string;
   /**
    *@description This value matches the key used to create the spotsId `${item}${itemId}`
    */
