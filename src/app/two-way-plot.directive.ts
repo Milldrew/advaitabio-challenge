@@ -1,4 +1,4 @@
-//check sym link
+//Hard linked to app and library
 import {
   Directive,
   ElementRef,
