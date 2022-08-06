@@ -7,10 +7,13 @@ Testing
 </h2>
 <p>Testing is currently beind done in the application at the root of the workspace.</p>
 <p>To run the e2e/UI tests:</p>
+
 ```
 npm run e2e two-way-plot-test.conf.js
 ```
+
 <p>To run the UI tests:</p>
+
 ```
 npm run test
 ```
