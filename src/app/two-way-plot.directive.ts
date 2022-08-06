@@ -18,39 +18,60 @@ export class TwoWayPlotDirective implements OnChanges {
    */
   @Input() data: Object[];
   /**
-   *@description FIND OUT WHAT THIS DOES
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
    */
   @Input() correction;
   /**
-   *@description FIND OUT WHAT THIS DOES
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
    */
   @Input() upType;
   /**
-   *@description FIND OUT WHAT THIS DOES
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
    */
   @Input() sigThr;
   /**
-   *@description FIND OUT WHAT THIS DOES
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
    */
   @Input() selectedItem;
   /**
-   *@description FIND OUT WHAT THIS DOES
+   *@description When true the spots will emit their itemID, via nextStateFn Output when false it will not emit.
    */
   @Input() disableSelection;
+  /**
+   *@description The value will be used to label the x axis on the two way plot.
+   */
   @Input() axisXLabel;
+  /**
+   *@description  The value will be used to label the y axis on the two way plot.
+   */
   @Input() axisYLabel;
   /**
-   *@description this is the label for the s axis
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
    */
   @Input() numTicks: number;
+  /**
+   *@description FIND OUT WHAT THIS IS AND DOCUMENT IT HERE
+   */
   @Input() sigLabel;
+  /**
+   *@description This value matches the key on the data that deterimnes the spots name.
+   */
   @Input() itemLabel;
   /**
-   *@description The property
+   *@description This value will match the key on the data that determines the spots size from the data.
    */
   @Input() itemSize;
+  /**
+   *@description This value matches the key used to create the spotsId `${item}${itemId}`
+   */
   @Input() itemId;
+  /**
+   *@description This value matches the key used to create the spotsId `${item}${itemId}`
+   */
   @Input() item;
+  /**
+   *@description This function will trigger if the disableSelection is true and it will emit the itemId of the element
+   */
   @Output() nextStateFn = new EventEmitter<{}>();
   @Input() itemScale;
   @Input() showXThreshold;
