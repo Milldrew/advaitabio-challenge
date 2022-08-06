@@ -11,7 +11,7 @@ import {
 import { log10 } from './common-function';
 import * as d3 from 'd3';
 @Directive({
-  selector: '[libTwoWayPlot]',
+  selector: '[twoWayPlot]',
 })
 export class TwoWayPlotDirective implements OnChanges {
   /**
