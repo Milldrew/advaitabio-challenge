@@ -11,7 +11,7 @@ exports.config = {
   baseUrl: "http://localhost:4200",
 
   framework: "jasmine",
-  specs: ["./e2e/first-test.e2e-spec.ts"],
+  specs: ["./e2e/two-way-plot.e2e-spec.ts"],
   onPrepare: () => {
     require("ts-node").register({
       project: "e2e",
