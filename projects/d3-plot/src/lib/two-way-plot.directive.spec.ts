@@ -13,9 +13,16 @@ describe('TwoWayPlotDirective', () => {
     fixture.detectChanges();
   });
   afterEach(() => (fixture = null));
-  it('should create an instance', () => {
-    //const directive = new TwoWayPlotDirective();
-    expect('hello').toBeTruthy('hello');
+  it('The component should be instantiated', () => {
+    fixture.detectChanges();
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+  it(`The data should be initialized`, () => {
+    fixture = TestBed.createComponent(D3PlotComponent);
+    fixture.detectChanges();
+    const app = fixture.componentInstance;
+    expect(app.data).toBeTruthy();
   });
   it('The twoWayPlot hasbeen instantiated', () => {
     const svgElement = fixture.nativeElement.querySelector('svg');
