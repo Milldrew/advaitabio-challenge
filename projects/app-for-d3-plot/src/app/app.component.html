@@ -1,0 +1,39 @@
+<!-- hard linked between lib and app -->
+<div
+  id="twoWayPlot"
+  twoWayPlot
+  class="plot"
+  [data]="data"
+  correction=""
+  sigThr="thr"
+  [disableSelection]="true"
+  axisXLabel="pORA"
+  axisYLabel="pAcc"
+  [numTicks]="35"
+  sigLabel="pComb"
+  itemLabel="pName"
+  itemSize="path_size"
+  itemId="pathID"
+  item="pathway"
+  itemScale="log"
+  (nextStateFn)="handleDotClick($event)"
+></div>
+<div
+  id="twoWayPlotDisableSelectionFalse"
+  twoWayPlot
+  class="plot"
+  [data]="data"
+  correction=""
+  sigThr="thr"
+  [disableSelection]="false"
+  axisXLabel="pORA"
+  axisYLabel="pAcc"
+  [numTicks]="35"
+  sigLabel="pComb"
+  itemLabel="pName"
+  itemSize="path_size"
+  itemId="pathID"
+  item="pathway"
+  itemScale="log"
+  (nextStateFn)="handleDotClick($event)"
+></div>
