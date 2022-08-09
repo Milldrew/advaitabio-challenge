@@ -4,7 +4,16 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "d3-plot": ["dist/d3-plot/d3-plot", "dist/d3-plot"]
+      "d3-plot": [
+        "dist/d3-plot/d3-plot",
+        "dist/d3-plot",
+        "dist/d3-plot/d3-plot",
+        "dist/d3-plot"
+      ],
+      "new-lib": [
+        "dist/new-lib/new-lib",
+        "dist/new-lib"
+      ]
     },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,

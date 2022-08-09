@@ -1,3 +1,4 @@
+/*
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { D3PlotComponent } from './d3-plot.component';
@@ -23,3 +24,4 @@ describe('D3PlotComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+*/

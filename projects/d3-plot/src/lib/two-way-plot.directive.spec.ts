@@ -1,10 +1,10 @@
+import * as d3 from 'd3';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { D3PlotComponent } from './d3-plot.component';
 import { TwoWayPlotDirective } from './two-way-plot.directive';
 describe('TwoWayPlotDirective', () => {
   let fixture: ComponentFixture<D3PlotComponent>;
-  let dotElement = null;
   beforeEach(async () => {
     fixture = TestBed.configureTestingModule({
       declarations: [D3PlotComponent, TwoWayPlotDirective],

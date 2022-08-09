@@ -35,6 +35,7 @@ describe('TwoWayPlotDirective', () => {
     const dot = fixture.nativeElement.querySelector(
       '#twoWayPlotDisableSelectionFalse #pathway11202'
     );
+    console.log('dot', dot.dispatchEvent);
     dot.dispatchEvent(new Event('click'));
     expect(AppComponent.clickDotValue).toBeNull();
   });
