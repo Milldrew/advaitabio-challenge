@@ -108,6 +108,7 @@ export class TwoWayPlotDirective implements OnChanges {
   private twoWayPlotVersion = 'TWP v2.0';
 
   constructor(private ele: ElementRef) {
+    console.log('hello from the directive');
     this.margin = { top: 20, right: 20, bottom: 75, left: 70 };
   }
   init() {
@@ -233,6 +234,7 @@ export class TwoWayPlotDirective implements OnChanges {
   }
 
   ngOnChanges(changes) {
+    console.log('ngOnChanges');
     if (!this.svgExt) {
       this.init();
     }
