@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './d3-plot.component.html',
   styles: [],
 })
 export class D3PlotComponent implements OnInit {

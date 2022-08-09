@@ -1,8 +1,9 @@
+//hard linked between lib and app
 import * as data from './data.json';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-d3-plot',
+  selector: 'app-root',
   templateUrl: './d3-plot.component.html',
   styles: [],
 })
