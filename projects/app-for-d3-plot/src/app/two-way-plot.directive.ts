@@ -454,14 +454,16 @@ export class TwoWayPlotDirective implements OnChanges {
       .attr('cy', (d) => {
         return d[yLabel] ? this.y(-log10(d[yLabel])) : this.y(-log10(1));
       })
-      .on('mouseover', function (event, d) {
+      .on('mouseover', function (d, index, element) {
         let circle_data = d;
         self.tooltip.text(circle_data[self.itemLabel]);
         self.tooltip.style('visibility', 'visible');
-        d3.select(this)
-          .transition()
-          .duration(100)
-          .attr('r', 5 + self.pSize(circle_data[self.itemSize]));
+        d3.select(this).transition().duration(100).attr('r', '40');
+
+        const pSizeArg = circle_data[self.itemSize];
+        console.log(pSizeArg);
+        console.log({ circle_data, selfItemSize: self.itemSize });
+        //+ self.pSize(circle_data[self.itemSize]));
       })
       .on('mousemove', (event) => {
         this.tooltip
@@ -471,10 +473,8 @@ export class TwoWayPlotDirective implements OnChanges {
       .on('mouseout', function (event, d) {
         let circle_data = d;
         self.tooltip.style('visibility', 'hidden');
-        d3.select(this)
-          .transition()
-          .duration(100)
-          .attr('r', self.pSize(circle_data[self.itemSize]));
+        d3.select(this).transition().duration(100).attr('r', '20');
+        //self.pSize(circle_data[self.itemSize]));
       })
       .on('click', (event, d) => {
         if (this.disableSelection) {
