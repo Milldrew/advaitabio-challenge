@@ -12,8 +12,8 @@ Testing
 npm run e2e two-way-plot-test.conf.js
 ```
 
-<p>To run the UI tests:</p>
+<p>To run the UI tests for d3-plot lib:</p>
 
 ```
-npm run test
+ng test d3-plot
 ```

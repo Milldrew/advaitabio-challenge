@@ -454,29 +454,31 @@ export class TwoWayPlotDirective implements OnChanges {
       .attr('cy', (d) => {
         return d[yLabel] ? this.y(-log10(d[yLabel])) : this.y(-log10(1));
       })
-      .on('mouseover', function (event, d) {
+      .on('mouseover', function (d, index, element) {
         let circle_data = d;
         self.tooltip.text(circle_data[self.itemLabel]);
         self.tooltip.style('visibility', 'visible');
+
+        const dotStartingSize = self.pSize(circle_data[self.itemSize]);
+
         d3.select(this)
           .transition()
           .duration(100)
-          .attr('r', 5 + self.pSize(circle_data[self.itemSize]));
+          .attr('r', String(dotStartingSize + 5));
       })
       .on('mousemove', (event) => {
         this.tooltip
           .style('top', event.layerY - 10 + 'px')
           .style('left', event.layerX + 10 + 'px');
       })
-      .on('mouseout', function (event, d) {
+      .on('mouseout', function (d, index, elements) {
         let circle_data = d;
         self.tooltip.style('visibility', 'hidden');
-        d3.select(this)
-          .transition()
-          .duration(100)
-          .attr('r', self.pSize(circle_data[self.itemSize]));
+        const startingSize = String(self.pSize(circle_data[self.itemSize]));
+        d3.select(this).transition().duration(100).attr('r', startingSize);
       })
-      .on('click', (event, d) => {
+      .on('click', (d, two, three, four) => {
+        const itemId = d[this.itemId];
         if (this.disableSelection) {
           this.nextStateFn.emit(d[this.itemId]);
         }

@@ -6,6 +6,6 @@ import { D3PlotComponent } from './d3-plot.component';
 @NgModule({
   declarations: [D3PlotComponent, TwoWayPlotDirective],
   imports: [],
-  exports: [D3PlotComponent, TwoWayPlotDirective],
+  exports: [TwoWayPlotDirective],
 })
 export class D3PlotModule {}
