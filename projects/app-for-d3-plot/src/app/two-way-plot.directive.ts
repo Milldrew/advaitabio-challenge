@@ -460,18 +460,11 @@ export class TwoWayPlotDirective implements OnChanges {
         self.tooltip.style('visibility', 'visible');
 
         const dotStartingSize = self.pSize(circle_data[self.itemSize]);
-        console.log({ dotStartingSize });
 
         d3.select(this)
           .transition()
           .duration(100)
           .attr('r', String(dotStartingSize + 5));
-
-        const pSizeArg = circle_data[self.itemSize];
-        console.log(pSizeArg);
-        console.log(self.pSize(pSizeArg), 'pSizeArg');
-        console.log({ circle_data, selfItemSize: self.itemSize });
-        //+ self.pSize(circle_data[self.itemSize]));
       })
       .on('mousemove', (event) => {
         this.tooltip
@@ -484,7 +477,8 @@ export class TwoWayPlotDirective implements OnChanges {
         const startingSize = String(self.pSize(circle_data[self.itemSize]));
         d3.select(this).transition().duration(100).attr('r', startingSize);
       })
-      .on('click', (event, d) => {
+      .on('click', (d, two, three, four) => {
+        const itemId = d[this.itemId];
         if (this.disableSelection) {
           this.nextStateFn.emit(d[this.itemId]);
         }
