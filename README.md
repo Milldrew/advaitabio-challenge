@@ -9,6 +9,9 @@ Testing
 <p>To run the e2e/UI tests:</p>
 
 ```
+// start test-app
+ng serve app-for-d3-plot
+
 npm run e2e two-way-plot-test.conf.js
 ```
 
