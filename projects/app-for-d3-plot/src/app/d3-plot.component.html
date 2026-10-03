@@ -2,10 +2,9 @@
 <header class="intro">
   <h1>Two-way pathway plot</h1>
   <p>
-    Each bubble is a biological pathway from a gene-expression experiment.
-    Further right means stronger over-representation (&minus;log<sub>10</sub> pORA),
-    higher means stronger perturbation (&minus;log<sub>10</sub> pAcc), and bigger means
-    more genes. Hover a bubble for its name; click it for the numbers.
+    Each bubble is a biological pathway from a gene study. Bubbles further right
+    and higher up are more significant, and bigger bubbles contain more genes.
+    Hover over a bubble to see its name. Click it to see its statistics.
   </p>
 </header>
 <main class="layout">
@@ -46,9 +45,9 @@
       <p class="hint">Click a bubble to see its pathway's statistics here.</p>
     </ng-template>
     <p class="about">
-      Built as a reusable Angular library around d3 for an Advaita Bio coding
-      challenge: one directive, configured entirely through inputs, emitting the
-      clicked pathway's id.
+      Built for an Advaita Bio coding challenge as a reusable Angular library
+      around d3. Other apps configure it with inputs, and it reports which
+      pathway was clicked.
     </p>
   </aside>
 </main>
